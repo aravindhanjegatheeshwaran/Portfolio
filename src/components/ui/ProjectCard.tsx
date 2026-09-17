@@ -25,73 +25,66 @@ const tagColors: Record<ProjectTag, BadgeColor> = {
 
 export function ProjectCard({ project }: { project: Project }) {
   return (
-    <div className="flex flex-col bg-[#111113] border border-[#222226] rounded-2xl p-6 hover:border-cyan-800/40 transition-all duration-300 group">
-      {/* Header */}
-      <div className="flex items-start justify-between gap-3 mb-4">
+    <article className="group flex h-full flex-col rounded-[28px] border border-white/10 bg-[#121821] p-6 shadow-[var(--shadow-md)] transition-transform duration-200 hover:-translate-y-0.5 hover:border-sky-400/30">
+      <div className="mb-4 flex items-start justify-between gap-3">
         <div className="min-w-0">
-          <div className="flex flex-wrap gap-1.5 mb-2">
+          <div className="mb-3 flex flex-wrap gap-1.5">
             {project.tags.map((tag) => (
               <Badge key={tag} variant={tagColors[tag]} size="sm">
                 {tag}
               </Badge>
             ))}
           </div>
-          <h3 className="text-lg font-bold text-white group-hover:text-cyan-400 transition-colors truncate">
-            {project.title}
-          </h3>
-          <p className="text-sm text-gray-500">{project.subtitle}</p>
+          <h3 className="text-xl font-semibold text-white">{project.title}</h3>
+          <p className="mt-1 text-sm text-slate-400">{project.subtitle}</p>
         </div>
         <span
-          className={`shrink-0 text-xs px-2 py-0.5 rounded-full border ${
+          className={`shrink-0 rounded-full border px-2.5 py-1 text-[10px] font-medium uppercase tracking-[0.16em] ${
             project.status === "delivered"
-              ? "text-emerald-400 border-emerald-800/50 bg-emerald-950/40"
-              : "text-yellow-400 border-yellow-800/50 bg-yellow-950/40"
+              ? "border-emerald-400/30 bg-emerald-500/10 text-emerald-300"
+              : "border-amber-400/30 bg-amber-500/10 text-amber-200"
           }`}
         >
-          {project.status === "delivered" ? "Delivered" : "In Dev"}
+          {project.status === "delivered" ? "Delivered" : "In dev"}
         </span>
       </div>
 
-      {/* Description */}
-      <p className="text-gray-400 text-sm leading-relaxed mb-4 flex-1">
+      <p className="flex-1 text-sm leading-6 text-slate-300">
         {project.description}
       </p>
 
-      {/* Hardware / protocol detail */}
       {project.embeddedDetail && (
-        <div className="bg-orange-950/20 border border-orange-900/30 rounded-lg p-3 mb-4">
-          <p className="text-xs font-semibold text-orange-400 mb-1">
-            {project.embeddedDetail.protocol} — Frame Format
+        <div className="mt-4 rounded-2xl border border-orange-500/20 bg-orange-500/5 p-3">
+          <p className="text-[10px] font-semibold uppercase tracking-[0.2em] text-orange-200">
+            {project.embeddedDetail.protocol} — Frame format
           </p>
-          <p className="text-xs text-orange-300/80 font-mono leading-relaxed">
+          <p className="mt-2 font-mono text-xs leading-5 text-orange-100/80">
             {project.embeddedDetail.frameFormat}
           </p>
           {project.embeddedDetail.hardware && (
-            <p className="text-xs text-orange-300/50 mt-1">
+            <p className="mt-2 text-xs text-orange-100/60">
               {project.embeddedDetail.hardware}
             </p>
           )}
         </div>
       )}
 
-      {/* Impact */}
-      <div className="bg-gray-900/50 rounded-lg p-3 mb-4">
-        <p className="text-xs font-semibold text-gray-500 uppercase tracking-wide mb-1">
-          Key Achievements
+      <div className="mt-4 rounded-2xl border border-white/8 bg-slate-950/80 p-3">
+        <p className="text-[10px] font-semibold uppercase tracking-[0.2em] text-slate-400">
+          Key impact
         </p>
-        <p className="text-xs text-gray-300 leading-relaxed">
+        <p className="mt-2 text-sm leading-6 text-slate-300">
           {project.impact}
         </p>
       </div>
 
-      {/* Stack */}
-      <div className="flex flex-wrap gap-1.5">
+      <div className="mt-5 flex flex-wrap gap-2">
         {project.stack.map((tech) => (
           <Badge key={tech} variant="default" size="sm">
             {tech}
           </Badge>
         ))}
       </div>
-    </div>
+    </article>
   );
 }

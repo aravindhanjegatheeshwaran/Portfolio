@@ -13,28 +13,28 @@ const badgeClasses: Record<SkillColor, string> = {
 
 export function Skills() {
   return (
-    <section id="skills" className="py-24 bg-[#0c0c0f]">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="skills" className="section-block bg-[#0d1117]">
+      <div className="content-shell">
         <SectionHeader
           eyebrow="Technical Skills"
-          title="The stack I build with"
-          description="Grouped by domain — from browser to device to deployment."
+          title="The stack behind reliable, production-first delivery"
+          description="From browser experiences and APIs to embedded interfaces and operational tooling, I build across the full delivery path."
         />
 
-        <div className="mt-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+        <div className="mt-12 grid grid-cols-1 gap-5 sm:grid-cols-2 xl:grid-cols-3">
           {skillGroups.map((group) => (
             <div
               key={group.id}
-              className="bg-[#111113] border border-[#222226] rounded-2xl p-6"
+              className="rounded-[28px] border border-white/10 bg-[#121821] p-6 shadow-[var(--shadow-md)]"
             >
-              <h3 className="text-xs font-bold text-white mb-4 uppercase tracking-widest">
+              <h3 className="mb-4 text-[11px] font-semibold uppercase tracking-[0.24em] text-slate-400">
                 {group.label}
               </h3>
               <div className="flex flex-wrap gap-2">
                 {group.items.map((item) => (
                   <span
                     key={item}
-                    className={`inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium border ${badgeClasses[group.color]}`}
+                    className={`inline-flex items-center rounded-full border px-2.5 py-1 text-xs font-medium ${badgeClasses[group.color]}`}
                   >
                     {item}
                   </span>

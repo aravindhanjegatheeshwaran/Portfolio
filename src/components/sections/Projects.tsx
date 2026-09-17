@@ -7,28 +7,26 @@ export function Projects() {
   const others = projects.filter((p) => !p.featured);
 
   return (
-    <section id="projects" className="py-24 bg-[#0c0c0f]">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="projects" className="section-block bg-[#0d1117]">
+      <div className="content-shell">
         <SectionHeader
-          eyebrow="Work"
-          title="Projects & Case Studies"
-          description="A cross-domain portfolio spanning freelance delivery, enterprise systems, SaaS products, and IoT engineering."
+          eyebrow="Selected Work"
+          title="Projects that solve operational and product problems"
+          description="A mix of consulting work, platform builds, and deeply technical systems designed for real business constraints."
         />
 
-        {/* Featured grid */}
-        <div className="mt-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+        <div className="mt-12 grid grid-cols-1 gap-5 md:grid-cols-2 xl:grid-cols-3">
           {featured.map((project) => (
             <ProjectCard key={project.id} project={project} />
           ))}
         </div>
 
-        {/* Secondary projects */}
         {others.length > 0 && (
           <>
-            <h3 className="text-xs font-semibold text-gray-500 uppercase tracking-widest mt-16 mb-6">
-              Additional Projects
+            <h3 className="mt-16 mb-6 text-[11px] font-semibold uppercase tracking-[0.24em] text-slate-400">
+              Additional projects
             </h3>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
+            <div className="grid grid-cols-1 gap-5 md:grid-cols-2">
               {others.map((project) => (
                 <ProjectCard key={project.id} project={project} />
               ))}

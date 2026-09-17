@@ -1,3 +1,4 @@
+import { useEffect, useState } from "react";
 import { Navbar } from "./components/layout/Navbar";
 import { Footer } from "./components/layout/Footer";
 import { Hero } from "./components/sections/Hero";
@@ -6,10 +7,15 @@ import { Skills } from "./components/sections/Skills";
 import { EmbeddedSystems } from "./components/sections/EmbeddedSystems";
 import { Projects } from "./components/sections/Projects";
 import { Contact } from "./components/sections/Contact";
+import { ProfessionalPortfolioPage } from "./components/sections/ProfessionalPortfolioPage";
 
-function App() {
+function FreelanceHomepage() {
   return (
-    <div className="bg-[#09090b] min-h-screen">
+    <div className="min-h-screen bg-[#0b0d12] text-white">
+      <div
+        className="absolute inset-x-0 top-0 -z-10 h-[28rem] bg-[radial-gradient(circle_at_top,_rgba(125,211,252,0.12),transparent_55%)]"
+        aria-hidden="true"
+      />
       <Navbar />
       <main>
         <Hero />
@@ -22,6 +28,23 @@ function App() {
       <Footer />
     </div>
   );
+}
+
+function App() {
+  const [path, setPath] = useState<string>("/");
+
+  useEffect(() => {
+    const updatePath = () => setPath(window.location.pathname);
+    updatePath();
+    window.addEventListener("popstate", updatePath);
+    return () => window.removeEventListener("popstate", updatePath);
+  }, []);
+
+  if (path === "/portfolio" || path === "/portolio") {
+    return <ProfessionalPortfolioPage />;
+  }
+
+  return <FreelanceHomepage />;
 }
 
 export default App;
