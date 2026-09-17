@@ -1,9 +1,6 @@
 // ─────────────────────────────────────────────────────────────────────────────
-// IMPORTANT: After running `npm install`, copy your resume PDF into:
-//   public/assets/Aravindhan.pdf
-// That file is served at /assets/Aravindhan.pdf for the download button.
-//
-// Update the contact fields below with your real email, GitHub, and LinkedIn.
+// Resume document lives in public/assets/documents/Aravindhan.pdf and is served at
+// /assets/documents/Aravindhan.pdf for download/view actions.
 // ─────────────────────────────────────────────────────────────────────────────
 
 export const freelanceProfile = {
@@ -17,7 +14,7 @@ export const freelanceProfile = {
     "I focus on clear communication, business value, and dependable delivery for custom projects and technical consulting work.",
   ],
   location: "India",
-  resume: "/assets/Aravindhan.pdf",
+  resume: "/assets/documents/Aravindhan.pdf",
   contact: {
     email: "aravindhanjegatheeshwaran@gmail.com",
     github: "https://github.com/aravindhanjegatheeshwaran",
@@ -41,7 +38,7 @@ export const interviewProfile = {
     "Proven track record of leading cross-functional teams, optimizing system performance, and delivering high-availability platforms supporting real-time transactions and AI-driven automation at scale. Skilled in integrating embedded systems with backend services to power real-time banking and monitoring dashboards, with a strong focus on scalable system architecture design.",
   ],
   location: "India",
-  resume: "/assets/Aravindhan.pdf",
+  resume: "/assets/documents/Aravindhan.pdf",
   contact: {
     email: "aravindhanjegatheeshwaran@gmail.com",
     github: "https://github.com/aravindhanjegatheeshwaran",
@@ -49,9 +46,9 @@ export const interviewProfile = {
   },
   stats: [
     { label: "Experience", value: "5.5+ yrs" },
-    { label: "Teams Led", value: "5+" },
-    { label: "Daily Transactions", value: "10K+" },
-    { label: "Uptime", value: "99.9%" },
+    { label: "System Design", value: "Microservices" },
+    { label: "Transactions", value: "10K+/day" },
+    { label: "Reliability", value: "99.9%" },
   ],
 };
 
