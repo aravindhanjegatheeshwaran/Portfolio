@@ -86,6 +86,8 @@ const education = [
 ];
 
 export function ProfessionalPortfolioPage() {
+  const profileImage = `${import.meta.env.BASE_URL}assets/images/AravindhanJ.jpg`;
+
   return (
     <div className="min-h-screen bg-[#f6f1ea] text-[#1e1b1a]">
       <main className="mx-auto max-w-6xl px-4 py-8 sm:px-6 lg:px-8 lg:py-12">
@@ -137,7 +139,7 @@ export function ProfessionalPortfolioPage() {
           <div className="flex items-center justify-center">
             <div className="w-full max-w-sm overflow-hidden rounded-[28px] border border-[#e8dccf] bg-[#f2eae2] p-3 shadow-[0_18px_38px_rgba(42,31,24,0.1)]">
               <img
-                src="/assets/images/AravindhanJ.jpg"
+                src={profileImage}
                 alt={interviewProfile.name}
                 className="h-[420px] w-full rounded-[22px] object-cover object-center"
               />

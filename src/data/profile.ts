@@ -1,6 +1,8 @@
+const baseAssetUrl = import.meta.env.BASE_URL;
+
 // ─────────────────────────────────────────────────────────────────────────────
 // Resume document lives in public/assets/Documents/Aravindhan.pdf and is served at
-// /assets/Documents/Aravindhan.pdf for download/view actions.
+// the Vite base-aware URL for both local and production environments.
 // ─────────────────────────────────────────────────────────────────────────────
 
 export const freelanceProfile = {
@@ -14,7 +16,7 @@ export const freelanceProfile = {
     "I focus on clear communication, business value, and dependable delivery for custom projects and technical consulting work.",
   ],
   location: "India",
-  resume: "/assets/Documents/Aravindhan.pdf",
+  resume: `${baseAssetUrl}assets/Documents/Aravindhan.pdf`,
   contact: {
     email: "aravindhanjegatheeshwaran@gmail.com",
     github: "https://github.com/aravindhanjegatheeshwaran",
@@ -38,7 +40,7 @@ export const interviewProfile = {
     "Proven track record of leading cross-functional teams, optimizing system performance, and delivering high-availability platforms supporting real-time transactions and AI-driven automation at scale. Skilled in integrating embedded systems with backend services to power real-time banking and monitoring dashboards, with a strong focus on scalable system architecture design.",
   ],
   location: "India",
-  resume: "/assets/Documents/Aravindhan.pdf",
+  resume: `${baseAssetUrl}assets/Documents/Aravindhan.pdf`,
   contact: {
     email: "aravindhanjegatheeshwaran@gmail.com",
     github: "https://github.com/aravindhanjegatheeshwaran",
