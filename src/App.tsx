@@ -35,11 +35,22 @@ function App() {
 
   useEffect(() => {
     const updatePath = () => {
+      const params = new URLSearchParams(window.location.search);
+      const redirectedPath = params.get("redirect");
       const pathname = window.location.pathname || "/";
       const repoBase = "/Portfolio";
-      const normalized = pathname.startsWith(repoBase)
+
+      let normalized = pathname.startsWith(repoBase)
         ? pathname.slice(repoBase.length) || "/"
         : pathname;
+
+      if (redirectedPath) {
+        normalized = redirectedPath;
+      }
+
+      if (!normalized.startsWith("/")) {
+        normalized = `/${normalized}`;
+      }
 
       setPath(normalized || "/");
     };
