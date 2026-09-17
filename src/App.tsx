@@ -34,7 +34,16 @@ function App() {
   const [path, setPath] = useState<string>("/");
 
   useEffect(() => {
-    const updatePath = () => setPath(window.location.pathname);
+    const updatePath = () => {
+      const pathname = window.location.pathname || "/";
+      const repoBase = "/Portfolio";
+      const normalized = pathname.startsWith(repoBase)
+        ? pathname.slice(repoBase.length) || "/"
+        : pathname;
+
+      setPath(normalized || "/");
+    };
+
     updatePath();
     window.addEventListener("popstate", updatePath);
     return () => window.removeEventListener("popstate", updatePath);

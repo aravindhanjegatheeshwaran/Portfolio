@@ -88,14 +88,6 @@ const education = [
 export function ProfessionalPortfolioPage() {
   return (
     <div className="min-h-screen bg-[#f6f1ea] text-[#1e1b1a]">
-      <header className="sticky top-0 z-40 border-b border-[#e1d5c9] bg-[#f6f1ea]/90 backdrop-blur-md">
-        <div className="mx-auto flex max-w-6xl items-center justify-end px-4 py-4 sm:px-6 lg:px-8">
-          <span className="text-sm font-medium text-[#4f443f]">
-            Mobile: 8695704181
-          </span>
-        </div>
-      </header>
-
       <main className="mx-auto max-w-6xl px-4 py-8 sm:px-6 lg:px-8 lg:py-12">
         <section className="grid gap-8 overflow-hidden rounded-[32px] border border-[#e8dccf] bg-[#fffaf5] p-6 shadow-[0_20px_50px_rgba(30,22,17,0.08)] sm:p-8 lg:grid-cols-[1.15fr_0.85fr] lg:p-10">
           <div className="flex flex-col justify-center">
@@ -115,7 +107,7 @@ export function ProfessionalPortfolioPage() {
             <div className="mt-8 flex flex-wrap gap-3">
               <a
                 href={interviewProfile.resume}
-                download
+                download="Aravindhan.pdf"
                 className="inline-flex items-center justify-center rounded-full bg-[#1f1a17] px-5 py-3 text-sm font-semibold text-[#f8f3ee] transition hover:bg-[#2b2421]"
               >
                 Download Resume
