@@ -25,6 +25,28 @@ const contactLinks = [
     ),
   },
   {
+    label: "Mobile",
+    value: profile.contact.phone,
+    href: `tel:${profile.contact.phone}`,
+    external: false,
+    icon: (
+      <svg
+        className="w-5 h-5"
+        fill="none"
+        viewBox="0 0 24 24"
+        stroke="currentColor"
+        strokeWidth={1.5}
+        aria-hidden="true"
+      >
+        <path
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          d="M3.75 6.75A2.25 2.25 0 016 4.5h12a2.25 2.25 0 012.25 2.25v10.5A2.25 2.25 0 0118 19.5H6A2.25 2.25 0 013.75 17.25V6.75zm4.5 1.5h7.5M8.25 15h7.5"
+        />
+      </svg>
+    ),
+  },
+  {
     label: "GitHub",
     value: profile.contact.github.replace("https://", ""),
     href: profile.contact.github,

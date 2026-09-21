@@ -1,7 +1,14 @@
 {
-	"folders": [
-		{
-			"path": "."
-		}
-	]
+  "folders": [
+    {
+      "path": ".",
+    },
+  ],
+  "settings": {
+    "chat.tools.terminal.autoApprove": {
+      "git remote": true,
+      "npm install": true,
+      "npx tsc": true,
+    },
+  },
 }

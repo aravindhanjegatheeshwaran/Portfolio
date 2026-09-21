@@ -1,4 +1,6 @@
 import { interviewProfile } from "../../data/profile";
+import { projects } from "../../data/projects";
+import { skillGroups } from "../../data/skills";
 import { Badge } from "../ui/Badge";
 
 const experience = [
@@ -8,14 +10,11 @@ const experience = [
     period: "Aug 2024 – Present",
     role: "Senior Software Engineer – Full Stack Web Developer",
     details: [
-      "Developed and maintained scalable core banking applications and AI-driven automation solutions, improving operational efficiency.",
-      "Led a cross-functional team of 5+ engineers to deliver end-to-end fintech solutions.",
-      "Designed and developed embedded firmware integrated with backend banking systems for AI-driven automation workflows.",
-      "Built high-performance FastAPI microservices and REST APIs, supporting 10K+ daily transactions.",
-      "Developed responsive and optimized React.js interfaces, reducing page load time by ~30%.",
-      "Designed and optimized PostgreSQL databases, improving query performance by 25–30%.",
-      "Managed cloud deployments on AWS EKS using Docker and Kubernetes, ensuring 99.9% uptime and supporting CI/CD pipelines.",
-      "Collaborated with stakeholders and product teams to define requirements and architecture decisions for reliability and scalability.",
+      "Developed and maintained scalable core banking applications and AI-driven automation solutions focused on operational efficiency.",
+      "Led a cross-functional engineering team to deliver end-to-end fintech systems, product improvements, and platform reliability upgrades.",
+      "Built backend services and responsive interfaces for high-volume transaction workflows and real-time operational systems.",
+      "Designed embedded telemetry and platform integrations to support AI-driven automation and operational intelligence.",
+      "Managed AWS EKS deployments with Docker and Kubernetes to support production delivery and CI/CD workflows.",
     ],
   },
   {
@@ -24,11 +23,9 @@ const experience = [
     period: "Aug 2022 – July 2024",
     role: "Software Engineer – Full Stack Web Developer",
     details: [
-      "Developed and enhanced scalable full-stack applications, delivering new features and maintaining production systems.",
-      "Built applications using React.js, Django, and Node.js, designing RESTful and GraphQL APIs with PostgreSQL.",
-      "Designed REST and GraphQL APIs supporting multi-module application architecture.",
-      "Optimized database performance through indexing and query tuning, reducing execution time by 20–25%.",
-      "Participated in code reviews and improved code quality, maintainability, and development practices.",
+      "Built and improved full-stack applications across multi-module product landscapes using React, Django, and Node.js.",
+      "Designed REST and GraphQL APIs, optimized PostgreSQL performance, and created maintainable service patterns.",
+      "Collaborated with product and engineering teams to improve delivery quality, scalability, and maintainability.",
     ],
   },
   {
@@ -37,11 +34,9 @@ const experience = [
     period: "May 2021 – May 2022",
     role: "Python Developer",
     details: [
-      "Developed client-specific applications with end-to-end testing and quality-focused release practices.",
-      "Built a bulk SMS platform capable of handling thousands of messages per day.",
-      "Integrated Python applications with embedded systems for efficient processing.",
-      "Implemented WebSocket-based real-time communication features.",
-      "Deployed and maintained applications on AWS with strong availability practices.",
+      "Delivered client-specific applications with production-ready testing and deployment across real-world workflows.",
+      "Built messaging and integration features capable of handling high-throughput communication events.",
+      "Connected Python applications with embedded systems and communication layers for operational automation.",
     ],
   },
   {
@@ -50,34 +45,40 @@ const experience = [
     period: "Oct 2020 - April 2021",
     role: "Python Developer",
     details: [
-      "Independently developed and managed a full-stack web application, improving usability and accessibility.",
-      "Designed and developed responsive applications using Django and frontend technologies.",
-      "Built REST APIs to enable system integration and communication.",
-      "Developed Python automation tools, reducing manual effort in operations.",
-      "Conducted end-to-end testing and deployed applications on cloud platforms ensuring scalability.",
+      "Independently delivered full-stack web applications with a strong emphasis on usability and maintainability.",
+      "Developed backend integrations, automation tools, and cloud-deployed product features for operational workflows.",
     ],
   },
 ];
 
-const technicalSkills = [
-  "Python",
-  "JavaScript",
-  "GraphQL",
-  "Kubernetes",
-  "FastAPI",
-  "React.js",
-  "AWS",
-  "Microservices",
-  "Django",
-  "PostgreSQL",
-  "Docker",
-  "Git",
+const strengths = [
+  {
+    title: "Agentic AI & automation",
+    description:
+      "Designing workflows that combine reasoning, reliability, and operational context into business-ready systems.",
+  },
+  {
+    title: "System design",
+    description:
+      "Architecting scalable applications, APIs, and platform services across cloud-native and data-intensive environments.",
+  },
+  {
+    title: "Product engineering",
+    description:
+      "Turning product requirements into clean digital experiences and dependable systems across the stack.",
+  },
+  {
+    title: "Embedded & telemetry",
+    description:
+      "Connecting hardware telemetry, serial protocols, and monitoring data into actionable engineering insights.",
+  },
 ];
 
-const certifications = [
-  "Programming in Advanced Python, C and Java | T4TEQ Software Solutions",
-  "Front-End Web Development | Udemy",
-  "MuleSoft Developer level 1 | MuleSoft",
+const highlights = [
+  "Nearly 6 years building product systems, APIs, and platform engineering solutions.",
+  "Designed services handling 10K+ daily transactions with availability-focused reliability patterns.",
+  "Delivered work across frontend, backend, infrastructure, and embedded integrations end-to-end.",
+  "Built AI-enabled automation and intelligent workflows in fintech and operational technology environments.",
 ];
 
 const education = [
@@ -87,136 +88,247 @@ const education = [
 
 export function ProfessionalPortfolioPage() {
   const profileImage = `${import.meta.env.BASE_URL}assets/images/AravindhanJ.jpg`;
+  const featuredProjects = projects
+    .filter(
+      (project) =>
+        project.featured &&
+        !project.tags.includes("Freelance") &&
+        project.id !== "motor-dt",
+    )
+    .slice(0, 3);
+
+  const snapshot = [
+    { label: "Experience", value: "Nearly 6 years" },
+    { label: "Current focus", value: "Agentic AI" },
+    { label: "Platform scale", value: "10K+ tx/day" },
+    { label: "Strength", value: "Full-stack engineering" },
+  ];
 
   return (
-    <div className="min-h-screen bg-[#f6f1ea] text-[#1e1b1a]">
-      <main className="mx-auto max-w-6xl px-4 py-8 sm:px-6 lg:px-8 lg:py-12">
-        <section className="grid gap-8 overflow-hidden rounded-[32px] border border-[#e8dccf] bg-[#fffaf5] p-6 shadow-[0_20px_50px_rgba(30,22,17,0.08)] sm:p-8 lg:grid-cols-[1.15fr_0.85fr] lg:p-10">
-          <div className="flex flex-col justify-center">
-            <p className="mb-4 inline-flex w-fit rounded-full border border-[#d7b7a7] bg-[#f3e3d7] px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.22em] text-[#7a4835]">
-              Professional Portfolio
-            </p>
-            <h1 className="text-4xl font-semibold tracking-[-0.06em] text-[#1d1714] sm:text-5xl lg:text-6xl">
+    <div className="min-h-screen bg-[#060b10] text-slate-100">
+      <div
+        className="pointer-events-none fixed inset-0 bg-[radial-gradient(circle_at_top,_rgba(94,234,212,0.08),transparent_28%),radial-gradient(circle_at_right,_rgba(96,165,250,0.08),transparent_24%)]"
+        aria-hidden="true"
+      />
+
+      <a
+        href={interviewProfile.resume}
+        target="_blank"
+        rel="noreferrer"
+        className="fixed bottom-5 right-5 z-50 inline-flex items-center justify-center rounded-full bg-[#dfe8f5] px-4 py-2.5 text-sm font-semibold text-[#070b10] shadow-[0_20px_40px_rgba(147,197,253,0.18)] transition hover:-translate-y-0.5 hover:bg-white"
+      >
+        View Resume
+      </a>
+
+      <main className="relative mx-auto max-w-7xl px-4 pb-16 pt-6 sm:px-6 lg:px-8 lg:pb-20">
+        <header className="sticky top-0 z-40 mb-8 rounded-full border border-white/10 bg-[#0d1117]/75 px-4 py-3 shadow-[0_10px_30px_rgba(2,6,23,0.28)] backdrop-blur-xl">
+          <div className="mx-auto flex max-w-7xl items-center justify-between gap-4">
+            <div className="text-sm font-semibold uppercase tracking-[0.22em] text-[#7dd3fc]">
               {interviewProfile.name}
-            </h1>
-            <p className="mt-4 text-xl font-medium text-[#8a4d35] sm:text-2xl">
-              {interviewProfile.title}
-            </p>
-            <p className="mt-5 max-w-xl text-base leading-7 text-[#473f3b] sm:text-lg">
-              {interviewProfile.tagline}
-            </p>
-
-            <div className="mt-8 flex flex-wrap gap-3">
-              <a
-                href={interviewProfile.resume}
-                download="Aravindhan.pdf"
-                className="inline-flex items-center justify-center rounded-full bg-[#1f1a17] px-5 py-3 text-sm font-semibold text-[#f8f3ee] transition hover:bg-[#2b2421]"
-              >
-                Download Resume
-              </a>
             </div>
-
-            <div className="mt-8 flex flex-wrap gap-x-5 gap-y-2 text-sm text-[#5d514d]">
-              <span>📍 {interviewProfile.location}</span>
-              <span>📱 8695704181</span>
-              <a
-                href={`mailto:${interviewProfile.contact.email}`}
-                className="hover:text-[#8a4d35]"
-              >
-                {interviewProfile.contact.email}
+            <nav className="hidden items-center gap-6 text-sm text-slate-300 md:flex">
+              <a href="#snapshot" className="hover:text-white">
+                Snapshot
               </a>
-              <a
-                href={interviewProfile.contact.linkedin}
-                target="_blank"
-                rel="noreferrer"
-                className="hover:text-[#8a4d35]"
-              >
-                LinkedIn
+              <a href="#experience" className="hover:text-white">
+                Experience
               </a>
-            </div>
-          </div>
-
-          <div className="flex items-center justify-center">
-            <div className="w-full max-w-sm overflow-hidden rounded-[28px] border border-[#e8dccf] bg-[#f2eae2] p-3 shadow-[0_18px_38px_rgba(42,31,24,0.1)]">
-              <img
-                src={profileImage}
-                alt={interviewProfile.name}
-                className="h-[420px] w-full rounded-[22px] object-cover object-center"
-              />
-            </div>
-          </div>
-        </section>
-
-        <section className="mt-8 grid gap-4 md:grid-cols-4">
-          {interviewProfile.stats.map((stat) => (
-            <div
-              key={stat.label}
-              className="rounded-[24px] border border-[#e1d5c9] bg-[#fffaf5] p-5 text-left shadow-[0_12px_30px_rgba(30,22,17,0.04)]"
+              <a href="#skills" className="hover:text-white">
+                Skills
+              </a>
+              <a href="#resume" className="hover:text-white">
+                Resume
+              </a>
+            </nav>
+            <a
+              href={interviewProfile.resume}
+              target="_blank"
+              rel="noreferrer"
+              className="inline-flex items-center justify-center rounded-full border border-[#1f2937] bg-[#111827] px-3 py-2 text-sm font-medium text-slate-100 transition hover:border-sky-400/40 hover:text-sky-200"
             >
-              <div className="text-2xl font-semibold tracking-[-0.05em] text-[#1e1b1a]">
-                {stat.value}
+              Resume
+            </a>
+          </div>
+        </header>
+
+        <section
+          id="top"
+          className="reveal-panel relative overflow-hidden rounded-[36px] border border-white/10 bg-[#0b1220] shadow-[0_30px_90px_rgba(2,6,23,0.55)]"
+        >
+          <div
+            className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,_rgba(34,211,238,0.18),transparent_32%),radial-gradient(circle_at_bottom_right,_rgba(168,85,247,0.12),transparent_28%)]"
+            aria-hidden="true"
+          />
+          <div
+            className="absolute inset-0 opacity-30 [background-image:linear-gradient(rgba(148,163,184,0.08)_1px,transparent_1px),linear-gradient(90deg,rgba(148,163,184,0.08)_1px,transparent_1px)] [background-size:42px_42px]"
+            aria-hidden="true"
+          />
+
+          <div className="relative grid gap-10 p-6 sm:p-8 lg:grid-cols-[1.12fr_0.88fr] lg:p-12">
+            <div className="flex flex-col justify-center">
+              <div className="mb-6 flex flex-wrap items-center gap-3">
+                <span className="rounded-full border border-sky-400/30 bg-sky-500/10 px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.24em] text-sky-200">
+                  Agentic AI Engineer
+                </span>
+                <span className="rounded-full border border-emerald-400/20 bg-emerald-500/10 px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.24em] text-emerald-200">
+                  Available for senior roles
+                </span>
               </div>
-              <div className="mt-2 text-[11px] font-medium uppercase tracking-[0.22em] text-[#6d5d57]">
-                {stat.label}
+
+              <h1 className="max-w-xl text-4xl font-semibold tracking-[-0.08em] text-white sm:text-5xl lg:text-6xl">
+                {interviewProfile.name}
+              </h1>
+
+              <p className="mt-4 text-xl font-medium text-sky-200 sm:text-2xl">
+                {interviewProfile.title}
+              </p>
+
+              <p className="mt-5 max-w-xl text-base leading-8 text-slate-300 sm:text-lg">
+                {interviewProfile.tagline}
+              </p>
+
+              <div className="mt-8 flex flex-wrap gap-3">
+                <a
+                  href={interviewProfile.resume}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="inline-flex items-center justify-center rounded-full bg-[#dfe8f5] px-5 py-3 text-sm font-semibold text-[#070b10] shadow-[0_20px_40px_rgba(147,197,253,0.2)] transition hover:-translate-y-0.5 hover:bg-white"
+                >
+                  View Resume
+                </a>
+                <a
+                  href={`mailto:${interviewProfile.contact.email}`}
+                  className="inline-flex items-center justify-center rounded-full border border-white/10 bg-white/5 px-5 py-3 text-sm font-semibold text-slate-100 transition hover:-translate-y-0.5 hover:border-sky-400/40 hover:bg-sky-500/10"
+                >
+                  Email Me
+                </a>
+              </div>
+
+              <div className="mt-8 flex flex-wrap gap-x-5 gap-y-2 text-sm text-slate-300">
+                <span>📍 {interviewProfile.location}</span>
+                <a
+                  href={`mailto:${interviewProfile.contact.email}`}
+                  className="text-sky-200 hover:text-sky-100"
+                >
+                  {interviewProfile.contact.email}
+                </a>
+                <a
+                  href={`tel:${interviewProfile.contact.phone}`}
+                  className="text-sky-200 hover:text-sky-100"
+                >
+                  {interviewProfile.contact.phone}
+                </a>
+                <a
+                  href={interviewProfile.contact.linkedin}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="text-sky-200 hover:text-sky-100"
+                >
+                  LinkedIn
+                </a>
+                <a
+                  href={interviewProfile.contact.github}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="text-sky-200 hover:text-sky-100"
+                >
+                  GitHub
+                </a>
               </div>
             </div>
-          ))}
+
+            <div className="flex items-center justify-center">
+              <div className="relative w-full max-w-[460px]">
+                <div
+                  className="absolute inset-0 rounded-[30px] bg-gradient-to-br from-sky-500/20 via-cyan-400/10 to-violet-500/20 blur-2xl"
+                  aria-hidden="true"
+                />
+                <div className="relative overflow-hidden rounded-[30px] border border-white/10 bg-[#0e1725] p-3 shadow-[0_24px_70px_rgba(2,6,23,0.6)]">
+                  <img
+                    src={profileImage}
+                    alt={interviewProfile.name}
+                    className="h-[440px] w-full rounded-[24px] object-cover object-center"
+                  />
+                </div>
+                <div className="absolute -bottom-6 left-6 right-6 grid grid-cols-3 gap-3 rounded-2xl border border-white/10 bg-[#0e1725]/90 p-3 backdrop-blur-sm">
+                  {snapshot.map((item) => (
+                    <div
+                      key={item.label}
+                      className="rounded-xl border border-slate-800 bg-slate-950/80 px-2 py-3 text-center"
+                    >
+                      <div className="text-[10px] uppercase tracking-[0.2em] text-slate-400">
+                        {item.label}
+                      </div>
+                      <div className="mt-2 text-sm font-semibold text-white">
+                        {item.value}
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+          </div>
         </section>
 
         <section
-          id="about"
-          className="mt-12 rounded-[30px] border border-[#e1d5c9] bg-[#fffaf5] p-6 sm:p-8"
+          id="snapshot"
+          className="reveal-panel mt-12 grid gap-5 lg:grid-cols-[1.1fr_0.9fr]"
         >
-          <p className="text-[11px] font-semibold uppercase tracking-[0.22em] text-[#8a4d35]">
-            About
-          </p>
-          <div className="mt-5 grid gap-5 lg:grid-cols-[1.2fr_0.8fr]">
-            <div className="space-y-4 text-base leading-7 text-[#4c433f]">
-              {interviewProfile.summary.map((paragraph, index) => (
-                <p key={index}>{paragraph}</p>
+          <div className="rounded-[30px] border border-white/10 bg-[#0d141d] p-6 sm:p-8">
+            <p className="text-[11px] font-semibold uppercase tracking-[0.24em] text-sky-200">
+              Core strengths
+            </p>
+            <div className="mt-6 space-y-4">
+              {strengths.map((strength) => (
+                <div
+                  key={strength.title}
+                  className="rounded-2xl border border-slate-800 bg-[#101923] p-4"
+                >
+                  <div className="text-base font-semibold text-white">
+                    {strength.title}
+                  </div>
+                  <p className="mt-2 text-sm leading-7 text-slate-300">
+                    {strength.description}
+                  </p>
+                </div>
               ))}
-            </div>
-            <div className="rounded-[24px] border border-[#eadfce] bg-[#f7efe8] p-5">
-              <p className="text-[11px] font-semibold uppercase tracking-[0.22em] text-[#7d655d]">
-                Focus
-              </p>
-              <ul className="mt-4 space-y-3 text-sm leading-6 text-[#3d3734]">
-                <li>• Full-stack product engineering</li>
-                <li>• System design and scalable backend architecture</li>
-                <li>• Embedded and IoT integrations</li>
-                <li>• Operational automation and data-driven platforms</li>
-              </ul>
             </div>
           </div>
         </section>
-
-        <section id="experience" className="mt-12">
-          <p className="text-[11px] font-semibold uppercase tracking-[0.22em] text-[#8a4d35]">
+        <section
+          id="experience"
+          className="reveal-panel mt-14 rounded-[32px] border border-white/10 bg-[#0d141d] p-6 sm:p-8"
+        >
+          <p className="text-[11px] font-semibold uppercase tracking-[0.24em] text-sky-200">
             Experience
           </p>
-          <div className="mt-6 space-y-5">
+          <div className="mt-6 space-y-6">
             {experience.map((item) => (
               <article
                 key={item.company}
-                className="rounded-[28px] border border-[#e1d5c9] bg-[#fffaf5] p-6 shadow-[0_12px_28px_rgba(30,22,17,0.04)]"
+                className="relative rounded-[28px] border border-slate-800 bg-[#101923] p-5 pl-6 sm:p-6"
               >
-                <div className="flex flex-col gap-2 md:flex-row md:items-start md:justify-between">
+                <div
+                  className="absolute left-0 top-6 h-16 w-0.5 rounded-full bg-gradient-to-b from-sky-400 to-violet-500"
+                  aria-hidden="true"
+                />
+                <div className="flex flex-col gap-3 md:flex-row md:items-start md:justify-between">
                   <div>
-                    <h2 className="text-2xl font-semibold text-[#1d1714]">
+                    <h3 className="text-2xl font-semibold text-white">
                       {item.company}
-                    </h2>
-                    <p className="mt-1 text-sm text-[#6f5d57]">
+                    </h3>
+                    <p className="mt-1 text-sm text-slate-400">
                       {item.location}
                     </p>
                   </div>
-                  <div className="text-sm font-medium text-[#8a4d35] md:text-right">
+                  <div className="text-sm font-medium text-sky-200">
                     {item.period}
                   </div>
                 </div>
-                <p className="mt-4 text-lg font-medium text-[#2d2724]">
+                <p className="mt-4 text-lg font-medium text-slate-100">
                   {item.role}
                 </p>
-                <ul className="mt-4 list-disc space-y-2 pl-5 text-sm leading-7 text-[#504742]">
+                <ul className="mt-4 list-disc space-y-2 pl-5 text-sm leading-7 text-slate-300">
                   {item.details.map((detail) => (
                     <li key={detail}>{detail}</li>
                   ))}
@@ -226,98 +338,157 @@ export function ProfessionalPortfolioPage() {
           </div>
         </section>
 
-        <section
-          id="skills"
-          className="mt-12 grid gap-6 lg:grid-cols-[0.95fr_1.05fr]"
-        >
-          <div className="rounded-[28px] border border-[#e1d5c9] bg-[#fffaf5] p-6">
-            <p className="text-[11px] font-semibold uppercase tracking-[0.22em] text-[#8a4d35]">
-              Technical Expertise
+        <section id="skills" className="reveal-panel mt-14">
+          <div className="mb-6">
+            <p className="text-[11px] font-semibold uppercase tracking-[0.24em] text-sky-200">
+              Technical expertise
             </p>
-            <div className="mt-5 flex flex-wrap gap-2">
-              {technicalSkills.map((skill) => (
-                <Badge key={skill} variant="cyan" size="md">
-                  {skill}
-                </Badge>
-              ))}
-            </div>
+            <h2 className="mt-3 text-3xl font-semibold tracking-[-0.06em] text-white">
+              Engineering depth across product, platform, and systems
+            </h2>
           </div>
 
-          <div className="rounded-[28px] border border-[#e1d5c9] bg-[#fffaf5] p-6">
-            <p className="text-[11px] font-semibold uppercase tracking-[0.22em] text-[#8a4d35]">
+          <div className="grid gap-5 lg:grid-cols-2 xl:grid-cols-3">
+            {skillGroups.map((group) => (
+              <div
+                key={group.id}
+                className="rounded-[28px] border border-white/10 bg-[#0d141d] p-5"
+              >
+                <div className="mb-4 flex items-center justify-between">
+                  <p className="text-[10px] font-semibold uppercase tracking-[0.2em] text-slate-400">
+                    {group.label}
+                  </p>
+                  <span
+                    className="h-2.5 w-2.5 rounded-full bg-sky-400"
+                    aria-hidden="true"
+                  />
+                </div>
+                <div className="flex flex-wrap gap-2">
+                  {group.items.map((skill) => (
+                    <Badge key={skill} variant="cyan" size="sm">
+                      {skill}
+                    </Badge>
+                  ))}
+                </div>
+              </div>
+            ))}
+          </div>
+        </section>
+
+        <section className="reveal-panel mt-14 grid gap-5 lg:grid-cols-2">
+          <div className="rounded-[30px] border border-white/10 bg-[#0d141d] p-6 sm:p-8">
+            <p className="text-[11px] font-semibold uppercase tracking-[0.24em] text-sky-200">
+              Highlights
+            </p>
+            <ul className="mt-6 space-y-4 text-sm leading-7 text-slate-300">
+              {highlights.map((item) => (
+                <li key={item} className="flex gap-3">
+                  <span
+                    className="mt-2 h-2 w-2 rounded-full bg-sky-400"
+                    aria-hidden="true"
+                  />
+                  <span>{item}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          <div className="rounded-[30px] border border-white/10 bg-[#0d141d] p-6 sm:p-8">
+            <p className="text-[11px] font-semibold uppercase tracking-[0.24em] text-sky-200">
               Education
             </p>
-            <div className="mt-5 space-y-4 text-sm leading-7 text-[#4c433f]">
+            <ul className="mt-6 space-y-4 text-sm leading-7 text-slate-300">
               {education.map((item) => (
-                <div key={item}>{item}</div>
+                <li key={item} className="flex gap-3">
+                  <span
+                    className="mt-2 h-2 w-2 rounded-full bg-violet-400"
+                    aria-hidden="true"
+                  />
+                  <span>{item}</span>
+                </li>
               ))}
-            </div>
+            </ul>
           </div>
         </section>
 
         <section
           id="resume"
-          className="mt-12 rounded-[30px] border border-[#e1d5c9] bg-[#fffaf5] p-6 sm:p-8"
+          className="reveal-panel mt-14 rounded-[32px] border border-white/10 bg-[#0b1220] p-6 sm:p-8"
         >
-          <div className="flex flex-col gap-5 lg:flex-row lg:items-center lg:justify-between">
+          <div className="flex flex-col gap-6 lg:flex-row lg:items-center lg:justify-between">
             <div>
-              <p className="text-[11px] font-semibold uppercase tracking-[0.22em] text-[#8a4d35]">
+              <p className="text-[11px] font-semibold uppercase tracking-[0.24em] text-sky-200">
                 Resume
               </p>
-              <h3 className="mt-3 text-2xl font-semibold text-[#1d1714]">
-                Professional background and work history
+              <h3 className="mt-3 text-3xl font-semibold tracking-[-0.06em] text-white">
+                Full background and work history
               </h3>
             </div>
             <div className="flex flex-wrap gap-3">
               <a
                 href={interviewProfile.resume}
-                download
-                className="inline-flex items-center justify-center rounded-full border border-[#ccb4a5] bg-[#f7efe8] px-5 py-3 text-sm font-semibold text-[#1f1a17] transition hover:border-[#a97057] hover:bg-[#f0e3d9]"
+                target="_blank"
+                rel="noreferrer"
+                className="inline-flex items-center justify-center rounded-full bg-[#dfe8f5] px-5 py-3 text-sm font-semibold text-[#070b10] transition hover:-translate-y-0.5 hover:bg-white"
+              >
+                View Resume
+              </a>
+              <a
+                href={interviewProfile.resume}
+                download="Aravindhan.pdf"
+                className="inline-flex items-center justify-center rounded-full border border-white/10 bg-slate-950/60 px-5 py-3 text-sm font-semibold text-slate-100 transition hover:-translate-y-0.5 hover:border-sky-400/40 hover:bg-sky-500/10"
               >
                 Download Resume
               </a>
             </div>
           </div>
-          <div className="mt-6 rounded-[22px] border border-[#e8dccf] bg-[#f5efe8] p-5">
-            <p className="text-sm leading-7 text-[#4c433f]">
-              The resume document is included in the project assets and is
-              available for direct viewing or download using the actions above.
-            </p>
-          </div>
         </section>
 
         <section
           id="contact"
-          className="mt-12 rounded-[30px] border border-[#e1d5c9] bg-[#1f1a17] p-6 text-[#f8f3ee] sm:p-8"
+          className="reveal-panel mt-14 rounded-[32px] border border-white/10 bg-[#0b1220] p-6 sm:p-8"
         >
-          <p className="text-[11px] font-semibold uppercase tracking-[0.22em] text-[#d9b9a8]">
+          <p className="text-[11px] font-semibold uppercase tracking-[0.24em] text-sky-200">
             Contact
           </p>
-          <div className="mt-5 flex flex-col gap-5 lg:flex-row lg:items-end lg:justify-between">
+          <div className="mt-6 flex flex-col gap-6 lg:flex-row lg:items-end lg:justify-between">
             <div>
-              <h3 className="text-2xl font-semibold">
+              <h3 className="text-3xl font-semibold tracking-[-0.06em] text-white">
                 Let’s build something meaningful.
               </h3>
-              <p className="mt-3 max-w-xl text-sm leading-7 text-[#d8ccc4]">
-                Open to product engineering, scalable application work, and
-                custom development engagements across software, automation, and
-                embedded systems.
+              <p className="mt-3 max-w-xl text-sm leading-7 text-slate-300">
+                Open to opportunities where product thinking, engineering depth,
+                and system-level execution can create meaningful outcomes.
               </p>
             </div>
             <div className="flex flex-wrap gap-3">
               <a
                 href={`mailto:${interviewProfile.contact.email}`}
-                className="inline-flex items-center justify-center rounded-full border border-[#3d3632] bg-[#2a2320] px-5 py-3 text-sm font-semibold text-[#f7f0e9] transition hover:border-[#d9b9a8] hover:text-[#fef4ee]"
+                className="inline-flex items-center justify-center rounded-full border border-white/10 bg-white/5 px-5 py-3 text-sm font-semibold text-slate-100 transition hover:-translate-y-0.5 hover:border-sky-400/40 hover:bg-sky-500/10"
               >
                 Email Me
+              </a>
+              <a
+                href={`tel:${interviewProfile.contact.phone}`}
+                className="inline-flex items-center justify-center rounded-full bg-[#dfe8f5] px-5 py-3 text-sm font-semibold text-[#070b10] transition hover:-translate-y-0.5 hover:bg-white"
+              >
+                Call Me
               </a>
               <a
                 href={interviewProfile.contact.linkedin}
                 target="_blank"
                 rel="noreferrer"
-                className="inline-flex items-center justify-center rounded-full bg-[#f3e3d7] px-5 py-3 text-sm font-semibold text-[#1f1a17] transition hover:bg-[#f0d5c3]"
+                className="inline-flex items-center justify-center rounded-full border border-white/10 bg-slate-950/60 px-5 py-3 text-sm font-semibold text-slate-100 transition hover:-translate-y-0.5 hover:border-sky-400/40 hover:bg-sky-500/10"
               >
                 LinkedIn
+              </a>
+              <a
+                href={interviewProfile.contact.github}
+                target="_blank"
+                rel="noreferrer"
+                className="inline-flex items-center justify-center rounded-full border border-white/10 bg-slate-950/60 px-5 py-3 text-sm font-semibold text-slate-100 transition hover:-translate-y-0.5 hover:border-sky-400/40 hover:bg-sky-500/10"
+              >
+                GitHub
               </a>
             </div>
           </div>

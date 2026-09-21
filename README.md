@@ -75,6 +75,17 @@ Render's Blueprint (IaC) feature.
 
 ---
 
+## Portfolio Modes
+
+This project supports two distinct portfolio narratives that should stay clearly separated:
+
+- **Freelance / Client profile**: defined in `src/data/profile.ts` as `freelanceProfile` and intentionally keeps client-facing, custom-build positioning.
+- **Interview / recruiter profile**: rendered by `ProfessionalPortfolioPage` and intentionally excludes freelance-tagged case studies and unrelated product entries from the interview story.
+
+Use the freelance profile for client work and consulting presentation. Use the interview profile for hiring manager and recruiter review. Do not mix the two into a single narrative.
+
+---
+
 ## Project Structure
 
 ```

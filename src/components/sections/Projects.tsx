@@ -9,12 +9,6 @@ export function Projects() {
   return (
     <section id="projects" className="section-block bg-[#0d1117]">
       <div className="content-shell">
-        <SectionHeader
-          eyebrow="Selected Work"
-          title="Projects that solve operational and product problems"
-          description="A mix of consulting work, platform builds, and deeply technical systems designed for real business constraints."
-        />
-
         <div className="mt-12 grid grid-cols-1 gap-5 md:grid-cols-2 xl:grid-cols-3">
           {featured.map((project) => (
             <ProjectCard key={project.id} project={project} />
