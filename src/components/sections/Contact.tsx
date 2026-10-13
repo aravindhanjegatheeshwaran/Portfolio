@@ -1,11 +1,11 @@
-import { profile } from "../../data/profile";
+import { freelanceProfile } from "../../data/profile";
 import { SectionHeader } from "../ui/SectionHeader";
 
 const contactLinks = [
   {
     label: "Email",
-    value: profile.contact.email,
-    href: `mailto:${profile.contact.email}`,
+    value: freelanceProfile.contact.email,
+    href: `mailto:${freelanceProfile.contact.email}`,
     external: false,
     icon: (
       <svg
@@ -26,8 +26,8 @@ const contactLinks = [
   },
   {
     label: "Mobile",
-    value: profile.contact.phone,
-    href: `tel:${profile.contact.phone}`,
+    value: freelanceProfile.contact.phone,
+    href: `tel:${freelanceProfile.contact.phone}`,
     external: false,
     icon: (
       <svg
@@ -48,8 +48,8 @@ const contactLinks = [
   },
   {
     label: "GitHub",
-    value: profile.contact.github.replace("https://", ""),
-    href: profile.contact.github,
+    value: freelanceProfile.contact.github.replace("https://", ""),
+    href: freelanceProfile.contact.github,
     external: true,
     icon: (
       <svg
@@ -71,8 +71,8 @@ export function Contact() {
         <div className="mx-auto max-w-2xl text-center">
           <SectionHeader
             eyebrow="Get in touch"
-            title="Need a reliable engineer for a product or systems build?"
-            description="Available for freelance work, consulting engagements, and senior engineering roles across product, automation, and IoT-heavy systems."
+            title="Have a workflow worth making simpler?"
+            description="I take on focused freelance work in AI-assisted automation, full-stack applications, backend APIs, and software-to-hardware integrations. Tell me what you need to improve and we can shape the right scope."
             align="center"
           />
 

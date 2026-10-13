@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { profile } from "../../data/profile";
+import { freelanceProfile } from "../../data/profile";
 
 const navLinks = [
   { href: "#about", label: "About" },
@@ -40,7 +40,7 @@ export function Navbar() {
             <span className="inline-flex h-7 w-7 items-center justify-center rounded-full border border-sky-400/30 bg-sky-500/10 text-[11px] text-sky-300">
               AJ
             </span>
-            {profile.name}
+            {freelanceProfile.name}
           </a>
 
           <div className="hidden items-center gap-6 md:flex">
@@ -57,7 +57,7 @@ export function Navbar() {
 
           <div className="flex items-center gap-2">
             <a
-              href={profile.contact.github}
+              href={freelanceProfile.contact.github}
               target="_blank"
               rel="noopener noreferrer"
               className="hidden rounded-full border border-white/10 bg-white/5 p-2 text-slate-300 hover:border-sky-300/40 hover:bg-sky-500/10 hover:text-sky-300 sm:inline-flex"

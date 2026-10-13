@@ -15,6 +15,22 @@ export interface SkillGroup {
 
 export const skillGroups: SkillGroup[] = [
   {
+    id: "ai-retrieval",
+    label: "AI & Retrieval",
+    color: "violet",
+    items: [
+      "LLM Integration",
+      "LangChain",
+      "LangGraph",
+      "RAG",
+      "Semantic Search",
+      "Embeddings",
+      "Metadata Filtering",
+      "Vector Databases",
+      "Graph Indexing",
+    ],
+  },
+  {
     id: "frontend",
     label: "Frontend & UI",
     color: "blue",

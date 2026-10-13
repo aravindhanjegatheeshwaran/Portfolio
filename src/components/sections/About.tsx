@@ -1,4 +1,4 @@
-import { profile } from "../../data/profile";
+import { freelanceProfile } from "../../data/profile";
 import { SectionHeader } from "../ui/SectionHeader";
 
 const highlights = [
@@ -38,7 +38,7 @@ const highlights = [
       </svg>
     ),
     title: "Systems thinking",
-    desc: "From procurement workflows to field-sensor data, I design software that fits the real operational workflow.",
+    desc: "I connect APIs, databases, and existing tools around the way a team actually works.",
   },
   {
     icon: (
@@ -91,7 +91,7 @@ export function About() {
               title="Product-minded engineering for business-critical software"
             />
             <div className="mt-8 space-y-5">
-              {profile.summary.map((para, i) => (
+              {freelanceProfile.summary.map((para, i) => (
                 <p key={i} className="text-base leading-7 text-slate-300">
                   {para}
                 </p>

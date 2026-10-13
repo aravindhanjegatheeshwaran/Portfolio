@@ -9,11 +9,11 @@ export const freelanceProfile = {
   name: "Aravindhan J",
   title: "Software Engineer & Freelance Builder",
   tagline:
-    "Custom web apps · workflow automation · IoT dashboards · business systems",
+    "AI workflow automation · full-stack applications · practical system integrations",
   summary: [
-    "I build practical digital systems that help businesses automate workflows, improve operations, and turn complex processes into reliable software.",
-    "My work spans web applications, backend systems, hardware integrations, and operational dashboards for clients who need functional, production-ready solutions.",
-    "I focus on clear communication, business value, and dependable delivery for custom projects and technical consulting work.",
+    "I bring nearly six years of software development experience to custom projects, from banking applications and backend APIs to AI-assisted workflow automation.",
+    "My current work includes a production log analysis and Jira ticket agent, retrieval workflows, and local development assistants. I also build full-stack applications and connect software with databases, APIs, and embedded systems.",
+    "For freelance engagements, I focus on understanding the operational problem first, then delivering a useful, maintainable solution with clear scope and communication.",
   ],
   location: "India",
   resume: `${baseAssetUrl}assets/Documents/Aravindhan.pdf`,
@@ -24,21 +24,20 @@ export const freelanceProfile = {
     linkedin: "https://www.linkedin.com/in/aravindhan-jegatheeshwaran/",
   },
   stats: [
-    { label: "Technical Domains", value: "6+" },
-    { label: "Client Work", value: "Freelance" },
-    { label: "Delivery", value: "Custom" },
+    { label: "Experience", value: "Nearly 6 years" },
+    { label: "Core work", value: "AI + full stack" },
+    { label: "Engagements", value: "Custom projects" },
   ],
 };
 
 export const interviewProfile = {
   name: "Aravindhan J",
-  title: "Senior Software Engineer",
-  tagline:
-    "Agentic AI · Full-Stack Engineering · Scalable Platforms · Embedded Intelligence",
+  title: "Senior Software Engineer · AI Agent Developer",
+  tagline: "Building useful AI workflows on top of reliable software systems.",
   summary: [
-    "Senior Software Engineer with nearly 6 years of experience building scalable web applications, fintech platform systems, and production-grade automation workflows.",
-    "I work across product engineering, system design, backend architecture, and AI-enabled workflows—bringing together frontend clarity, backend reliability, and real-world operational context to deliver high-impact software.",
-    "Currently focused on agentic AI, automation, and intelligent systems that improve decision-making, streamline workflows, and extend software beyond conventional application boundaries.",
+    "Software engineer with nearly six years of experience across banking applications, full-stack products, backend APIs, and Python development.",
+    "I work with Python, FastAPI, React, and PostgreSQL, and am currently developing LLM-powered agents for production log analysis, technical context retrieval, and Jira ticket creation.",
+    "My current focus is making AI workflows useful in real engineering environments: grounding responses in relevant documentation and code context, and integrating assistants with the tools teams already use.",
   ],
   location: "India",
   resume: `${baseAssetUrl}assets/Documents/Aravindhan.pdf`,
@@ -49,9 +48,9 @@ export const interviewProfile = {
     linkedin: "https://www.linkedin.com/in/aravindhan-jegatheeshwaran/",
   },
   stats: [
-    { label: "Current Focus", value: "Agentic AI" },
-    { label: "Transactions", value: "10K+/day" },
-    { label: "Reliability", value: "99.9%" },
+    { label: "Experience", value: "Nearly 6 years" },
+    { label: "Current focus", value: "AI agents + RAG" },
+    { label: "Measured impact", value: "20–25% faster queries" },
   ],
 };
 

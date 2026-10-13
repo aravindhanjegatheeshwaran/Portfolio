@@ -1,10 +1,10 @@
-import { profile } from "../../data/profile";
+import { freelanceProfile } from "../../data/profile";
 
 const focusAreas = [
-  "Web app product delivery",
-  "Workflow automation",
-  "Embedded + IoT systems",
-  "Data-rich dashboards",
+  "AI workflow automation",
+  "Full-stack web applications",
+  "Backend APIs and integrations",
+  "Embedded system connections",
 ];
 
 export function Hero() {
@@ -34,15 +34,15 @@ export function Hero() {
             </div>
 
             <h1 className="text-4xl font-semibold tracking-[-0.06em] text-white sm:text-5xl lg:text-7xl">
-              {profile.name}
+              {freelanceProfile.name}
             </h1>
 
             <p className="mt-4 text-xl font-medium text-slate-200 sm:text-2xl">
-              {profile.title}
+              {freelanceProfile.title}
             </p>
 
             <p className="mt-5 max-w-2xl text-base leading-7 text-slate-300 sm:text-lg">
-              {profile.tagline}
+              {freelanceProfile.tagline}
             </p>
 
             <div className="mt-8 flex flex-col gap-3 sm:flex-row">
@@ -50,7 +50,7 @@ export function Hero() {
                 href="#contact"
                 className="inline-flex items-center justify-center rounded-full bg-sky-400 px-5 py-3 text-sm font-semibold text-slate-950 shadow-[0_16px_40px_rgba(56,189,248,0.38)] hover:bg-sky-300"
               >
-                Book a project call
+                Discuss a project
               </a>
               <a
                 href="#projects"
@@ -88,7 +88,7 @@ export function Hero() {
             </div>
 
             <div className="mt-5 space-y-4">
-              {profile.stats.map((stat) => (
+              {freelanceProfile.stats.map((stat) => (
                 <div
                   key={stat.label}
                   className="flex items-center justify-between rounded-2xl border border-white/8 bg-white/[0.025] px-3 py-3"
